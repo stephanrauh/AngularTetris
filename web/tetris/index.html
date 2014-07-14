@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <!-- link href="bootstrap.css" rel="stylesheet" -->
+    <title>Tetris on AngularDart</title>
+    <link rel="stylesheet" href="../themes/aristo/theme.css">
+    <link rel="stylesheet" href="../themes/jquery-ui.css">
+    <link rel="stylesheet" href="../pui.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div MainController>
+   <div>
+    <h3><span style="width:200px;">Tetris on AngularDart</span></h3>
+    <span ng-show style="height:0px">
+    This is a prototype of Tetris running on AngularPrime/Dart.<br />
+    Currently, I've tested AngularTetris with Google Chrome 35, Firefox 30 and Internet Explorer 11. It may or may not work with other browsers.
+    Please note the Javascript version starts a lot slower than the Dartium version.
+    </span>
+   </div>
+
+     <pui-grid columns="1">
+        <tetris-playground columns="10" rows="20" >
+        </tetris-playground>
+
+        <div>
+        <button ng-disabled="ctrl.gameActive" ng-click="ctrl.startGame()">start game</button>
+        <button ng-disabled="ctrl.gameActive" ng-click="ctrl.showHighscore()">highscore</button>
+        </div>
+        </pui-grid>
+
+   <script type="application/dart" src="main.dart"></script>
+  <script type="text/javascript" src="dart.js"></script>
+  </div>
+ </body>
+</html>
